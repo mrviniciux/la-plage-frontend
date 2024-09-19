@@ -1,0 +1,6 @@
+a.item-dishes.aos-init.aos-animate,
+.owl-item.active.center {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
