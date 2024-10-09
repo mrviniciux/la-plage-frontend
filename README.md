@@ -18,5 +18,6 @@ Common URL: http://localhost:8080/
 - Open a terminal on `la-plage-frontend` folder
 - Execute the following commands
 
-docker build -t la-plage-frontend .
-docker run -p 8080:80 la-plage-frontend
+`docker build -t la-plage-frontend .`
+and
+`docker run -p 8080:80 la-plage-frontend`
