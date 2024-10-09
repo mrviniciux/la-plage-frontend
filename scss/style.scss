@@ -265,17 +265,6 @@ header {
 		transition: .3s all ease-out;
 		z-index: 1;
 	}
-	&:before {
-		position: absolute;
-		content: "";
-		left: 0;
-		right: 0;
-		bottom: 0;
-		top: 0;
-		z-index: 2;
-		background: $black;
-		opacity: .3;
-	}
 	.text {
 		z-index: 3;
 		position: absolute;
