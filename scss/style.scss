@@ -99,6 +99,15 @@ header {
 	.navbar-brand {
 		font-family: $font-heading;
 		font-size: 2rem;
+
+		.logo {
+			scale: 1.7;
+
+			@media screen and (max-width: 767px) {
+				scale: 1;
+			}
+		}
+
 		&.absolute {
 			position: absolute;
 			@include media-breakpoint-down(md) {
@@ -260,10 +269,37 @@ header {
 	position: relative;
 	display: block;
 	overflow: hidden;
+	width: inherit;
+	
+	&a.item-dishes.aos-init.aos-animate {
+		height: 80vh;
+	}
+
+	.beach-club {
+		background-image: url('/img/la-plage-digital-menu.png');
+	}
+
+	.le-restaurant {
+		background-image: url('/img/menu-le-restaurant.png');
+	}
+
+	.beach-club, .le-restaurant {
+		background-size: cover;
+		background-position: center;
+		height: inherit;
+		width: 100%;
+		position: relative;
+	}
+
 	img {
 		transform: scale(1.0);
 		transition: .3s all ease-out;
 		z-index: 1;
+
+		&.sun,&.digital,&.menu {
+			transform: scale(2.5);
+		}
+
 	}
 	.text {
 		z-index: 3;
@@ -272,31 +308,6 @@ header {
 		transform: translateY(-50%);
 		width: 100%;
 		text-align: center;
-		.dishes-heading {
-			font-size: 30px;
-			font-weight: 700;
-			max-width: 500px;
-			margin: 0 auto;
-			text-transform: uppercase;
-			color: $white;
-			@include media-breakpoint-down(md) {
-				font-size: 1.3rem;
-			}
-		}
-		.dishes-price {
-			font-weight: 700;
-			font-size: 50px;
-			color: $white;
-			border: none!important;
-			// display: inline-block;
-			// background: $primary;
-			// width: 100px;
-			// height: 100px;
-			line-height: 100px;
-			border-radius: 50%;
-			transition: .3s all ease;
-			// border: 2px solid transparent;
-		}
 	}
 	&:hover {
 		img {
