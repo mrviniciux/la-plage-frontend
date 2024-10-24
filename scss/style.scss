@@ -243,25 +243,14 @@ header {
 	}
 }
 
-.blog {
-	.media {
-		h3 {
-			font-size: 20px;
-			margin-bottom: 10px;
-		}
-		.post-meta {
-			font-size: 14px;
-			letter-spacing: .2em;
-			text-transform: uppercase;
-		}
-		> a {
-			width: 40%;
-			@include media-breakpoint-down(sm) {
-				width: 100%;
-				margin-bottom: 30px;
-			}
-		}
-	}
+.soon .content {
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.soon img {
+	max-width: 500px;
 }
 
 
