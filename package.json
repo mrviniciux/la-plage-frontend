@@ -1,10 +1,16 @@
 {
   "name": "la-plage-frontend",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "index.html",
   "repository": "https://github.com/mrviniciux/la-plage-frontend.git",
   "author": "mrviniciux <httpmarks@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "release": "standard-version"
+  },
+  "dependencies": {
+    "standard-version": "9.5.0"
+  },
   "devDependencies": {
     "prettier": "3.3.3"
   }
