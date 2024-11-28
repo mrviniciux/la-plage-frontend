@@ -1,163 +1,102 @@
- AOS.init({
+AOS.init({
   duration: 800,
   easing: 'slide-up',
-  once: true
- });
+  once: true,
+});
 
-(function($) {
+(function ($) {
+  'use strict';
 
-	'use strict';
-
-	// bootstrap dropdown hover
+  // bootstrap dropdown hover
 
   // loader
-  var loader = function() {
-    setTimeout(function() { 
-      if($('#loader').length > 0) {
+  var loader = function () {
+    setTimeout(function () {
+      if ($('#loader').length > 0) {
         $('#loader').removeClass('show');
       }
     }, 1);
   };
   loader();
 
-	
-	$('nav .dropdown').hover(function(){
-		var $this = $(this);
-		$this.addClass('show');
-		$this.find('> a').attr('aria-expanded', true);
-		$this.find('.dropdown-menu').addClass('show');
-	}, function(){
-		var $this = $(this);
-			$this.removeClass('show');
-			$this.find('> a').attr('aria-expanded', false);
-			$this.find('.dropdown-menu').removeClass('show');
-	});
+  $('nav .dropdown').hover(
+    function () {
+      var $this = $(this);
+      $this.addClass('show');
+      $this.find('> a').attr('aria-expanded', true);
+      $this.find('.dropdown-menu').addClass('show');
+    },
+    function () {
+      var $this = $(this);
+      $this.removeClass('show');
+      $this.find('> a').attr('aria-expanded', false);
+      $this.find('.dropdown-menu').removeClass('show');
+    }
+  );
 
-
-	$('#dropdown04').on('show.bs.dropdown', function () {
-	  console.log('show');
-	});
-
-  $('.navbar .dropdown > a').click(function(){
+  $('.navbar .dropdown > a').click(function () {
     location.href = this.href;
   });
 
-
-	// home slider
-	$('.home-slider').owlCarousel({
-    loop:true,
+  // home slider
+  $('.home-slider').owlCarousel({
+    loop: true,
     autoplay: true,
-    margin:0,
+    margin: 0,
     animateOut: 'fadeOut',
     animateIn: 'fadeIn',
     smartSpeed: 1000,
-    nav:true,
+    nav: true,
     autoplayHoverPause: true,
     items: 1,
-    navText : ["<span class='ion-chevron-left'></span>","<span class='ion-chevron-right'></span>"],
-    responsive:{
-      0:{
-        items:1,
-        nav:false
+    navText: [
+      "<span class='ion-chevron-left'></span>",
+      "<span class='ion-chevron-right'></span>",
+    ],
+    responsive: {
+      0: {
+        items: 1,
+        nav: false,
       },
-      600:{
-        items:1,
-        nav:false
+      600: {
+        items: 1,
+        nav: false,
       },
-      1000:{
-        items:1,
-        nav:true
-      }
-    }
-	});
-
-  $('.home-slider-loop-false').owlCarousel({
-    loop:false,
-    autoplay: true,
-    margin:0,
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn',
-    nav:true,
-    autoplayHoverPause: true,
-    items: 1,
-    navText : ["<span class='ion-chevron-left'></span>","<span class='ion-chevron-right'></span>"],
-    responsive:{
-      0:{
-        items:1,
-        nav:false
+      1000: {
+        items: 1,
+        nav: true,
       },
-      600:{
-        items:1,
-        nav:false
-      },
-      1000:{
-        items:1,
-        nav:true
-      }
-    }
+    },
   });
 
-	// owl carousel
-	var majorCarousel = $('.js-carousel-1');
-	majorCarousel.owlCarousel({
-    loop:true,
+  $('.home-slider-loop-false').owlCarousel({
+    loop: false,
     autoplay: true,
-    stagePadding: 7,
-    margin: 20,
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn',
-    smartSpeed: 1000,
-    nav: true,
-    autoplayHoverPause: true,
-    items: 3,
-    navText : ["<span class='ion-chevron-left'></span>","<span class='ion-chevron-right'></span>"],
-    responsive:{
-      0:{
-        items:1,
-        nav:false
-      },
-      600:{
-        items:2,
-        nav:false
-      },
-      1000:{
-        items:3,
-        nav:true,
-        loop:false
-      }
-  	}
-	});
-
-	// owl carousel
-	var major2Carousel = $('.js-carousel-2');
-	major2Carousel.owlCarousel({
-    loop:true,
-    autoplay: true,
-    stagePadding: 7,
-    margin: 20,
+    margin: 0,
     animateOut: 'fadeOut',
     animateIn: 'fadeIn',
     nav: true,
     autoplayHoverPause: true,
-    items: 4,
-    navText : ["<span class='ion-chevron-left'></span>","<span class='ion-chevron-right'></span>"],
-    responsive:{
-      0:{
-        items:1,
-        nav:false
+    items: 1,
+    navText: [
+      "<span class='ion-chevron-left'></span>",
+      "<span class='ion-chevron-right'></span>",
+    ],
+    responsive: {
+      0: {
+        items: 1,
+        nav: false,
       },
-      600:{
-        items:3,
-        nav:false
+      600: {
+        items: 1,
+        nav: false,
       },
-      1000:{
-        items:4,
-        nav:true,
-        loop:false
-      }
-  	}
-	});
-
+      1000: {
+        items: 1,
+        nav: true,
+      },
+    },
+  });
 
   $('.centernonloop').owlCarousel({
     center: true,
@@ -166,14 +105,14 @@
     margin: 30,
     smartSpeed: 1000,
     dots: true,
-    responsive:{
-      600:{
-        items: 2
+    responsive: {
+      600: {
+        items: 2,
       },
-      900:{
-        items: 3
-      }
-    }
+      900: {
+        items: 3,
+      },
+    },
   });
 
   $('.centernonloop2').owlCarousel({
@@ -185,44 +124,39 @@
     dots: true,
   });
 
+  var contentWayPoint = function () {
+    var i = 0;
+    $('.element-animate').waypoint(
+      function (direction) {
+        if (
+          direction === 'down' &&
+          !$(this.element).hasClass('element-animated')
+        ) {
+          i++;
 
-
-	var contentWayPoint = function() {
-		var i = 0;
-		$('.element-animate').waypoint( function( direction ) {
-
-			if( direction === 'down' && !$(this.element).hasClass('element-animated') ) {
-				
-				i++;
-
-				$(this.element).addClass('item-animate');
-				setTimeout(function(){
-
-					$('body .element-animate.item-animate').each(function(k){
-						var el = $(this);
-						setTimeout( function () {
-							var effect = el.data('animate-effect');
-							if ( effect === 'fadeIn') {
-								el.addClass('fadeIn element-animated');
-							} else if ( effect === 'fadeInLeft') {
-								el.addClass('fadeInLeft element-animated');
-							} else if ( effect === 'fadeInRight') {
-								el.addClass('fadeInRight element-animated');
-							} else {
-								el.addClass('fadeInUp element-animated');
-							}
-							el.removeClass('item-animate');
-						},  k * 100);
-					});
-					
-				}, 100);
-				
-			}
-
-		} , { offset: '95%' } );
-	};
-	contentWayPoint();
-
-
-
+          $(this.element).addClass('item-animate');
+          setTimeout(function () {
+            $('body .element-animate.item-animate').each(function (k) {
+              var el = $(this);
+              setTimeout(function () {
+                var effect = el.data('animate-effect');
+                if (effect === 'fadeIn') {
+                  el.addClass('fadeIn element-animated');
+                } else if (effect === 'fadeInLeft') {
+                  el.addClass('fadeInLeft element-animated');
+                } else if (effect === 'fadeInRight') {
+                  el.addClass('fadeInRight element-animated');
+                } else {
+                  el.addClass('fadeInUp element-animated');
+                }
+                el.removeClass('item-animate');
+              }, k * 100);
+            });
+          }, 100);
+        }
+      },
+      { offset: '95%' }
+    );
+  };
+  contentWayPoint();
 })(jQuery);
