@@ -1,6 +1,6 @@
 # La Plage - Beach Club Website
 
-![Screen Shot 2024-09-20 at 15 51 01](https://github.com/user-attachments/assets/cebdff8b-bdee-44c3-a587-dc73f012b011)
+![Screen Shot 2024-12-08 at 23 34 30](https://github.com/user-attachments/assets/660f6dc4-a7a9-4f02-8ac8-5912b4b547dc)
 
 This is a fork from https://github.com/technext/gourmet
 
