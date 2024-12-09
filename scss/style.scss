@@ -778,9 +778,10 @@ header {
   z-index: 2;
 }
 
+#soon.section,
 #specialities.section,
 #feedbacks.section {
-  margin-top: 5.55rem;
+  margin-top: 10rem;
 }
 
 .section-subscribe {
@@ -1518,5 +1519,15 @@ header {
         font-style: italic;
       }
     }
+  }
+}
+
+section.about {
+  margin-top: 10rem;
+}
+
+@media (max-width: 992px) {
+  section#about-beach-club-mucuge.about .row.align-items-center {
+    flex-direction: column-reverse;
   }
 }
