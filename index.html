@@ -144,6 +144,7 @@
                 <p data-aos="fade-up" data-aos-delay="200">
                   <a
                     href="https://api.whatsapp.com/send/?phone=73999192811"
+                    onclick="sendWhatsappClick()"
                     class="btn btn-white btn-outline-white"
                     >Reservar</a
                   >
@@ -166,6 +167,7 @@
                 <p data-aos="fade-up" data-aos-delay="200">
                   <a
                     href="https://api.whatsapp.com/send/?phone=73999192811"
+                    onclick="sendWhatsappClick()"
                     class="btn btn-white btn-outline-white"
                     >Reservar</a
                   >
@@ -660,6 +662,16 @@
     <script src="js/magnific-popup-options.js"></script>
 
     <script src="js/main.js"></script>
+
+    <script>
+      function sendWhatsappClick() {
+        gtag('event', 'whatsapp_click', {
+          event_category: 'engagement',
+          event_label: 'WhatsApp Link',
+          value: 1,
+        });
+      }
+    </script>
 
     <script
       async
